@@ -1,0 +1,77 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Willys",
+        "description": "Enter the credentials used to sign in to Willys.se.",
+        "data": {
+          "username": "Username or personal identity number",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Update Willys password",
+        "description": "Enter the current password for this Willys account.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The username or password was rejected.",
+      "cannot_connect": "Could not connect to Willys. Check the connection and try again."
+    },
+    "abort": {
+      "already_configured": "A Willys account is already configured.",
+      "reauth_successful": "Willys credentials were updated."
+    }
+  },
+  "services": {
+    "get_lists": {
+      "name": "Get shopping lists",
+      "description": "Return the account's shopping lists."
+    },
+    "get_list": {
+      "name": "Get shopping list",
+      "description": "Return one shopping list and its entries.",
+      "fields": {"list_id": {"name": "List ID"}}
+    },
+    "create_list": {
+      "name": "Create shopping list",
+      "description": "Create an empty shopping list.",
+      "fields": {"name": {"name": "List name"}}
+    },
+    "delete_list": {
+      "name": "Delete shopping list",
+      "description": "Permanently delete a shopping list.",
+      "fields": {"list_id": {"name": "List ID"}}
+    },
+    "add_product": {
+      "name": "Add product",
+      "description": "Add a Willys product code to a shopping list.",
+      "fields": {
+        "list_id": {"name": "List ID"},
+        "product_code": {"name": "Willys product code"},
+        "quantity": {"name": "Quantity"},
+        "pick_unit": {"name": "Pick unit"}
+      }
+    },
+    "remove_product": {
+      "name": "Remove product",
+      "description": "Remove the product entry from a shopping list.",
+      "fields": {
+        "list_id": {"name": "List ID"},
+        "product_code": {"name": "Willys product code"}
+      }
+    },
+    "change_quantity": {
+      "name": "Change product quantity",
+      "description": "Increase or decrease a product quantity. Negative values decrease; a zero quantity removes the entry.",
+      "fields": {
+        "list_id": {"name": "List ID"},
+        "product_code": {"name": "Willys product code"},
+        "delta": {"name": "Quantity change"}
+      }
+    }
+  }
+}

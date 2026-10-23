@@ -1,0 +1,69 @@
+get_lists:
+  fields: {}
+get_list:
+  fields:
+    list_id:
+      required: true
+      selector:
+        text:
+create_list:
+  fields:
+    name:
+      required: true
+      selector:
+        text:
+delete_list:
+  fields:
+    list_id:
+      required: true
+      selector:
+        text:
+add_product:
+  fields:
+    list_id:
+      required: true
+      selector:
+        text:
+    product_code:
+      required: true
+      selector:
+        text:
+    quantity:
+      required: true
+      selector:
+        number:
+          min: 1
+          step: 1
+          mode: box
+    pick_unit:
+      required: false
+      selector:
+        text:
+remove_product:
+  fields:
+    list_id:
+      required: true
+      selector:
+        text:
+    product_code:
+      required: true
+      selector:
+        text:
+change_quantity:
+  fields:
+    list_id:
+      required: true
+      selector:
+        text:
+    product_code:
+      required: true
+      selector:
+        text:
+    delta:
+      required: true
+      selector:
+        number:
+          min: -100
+          max: 100
+          step: 1
+          mode: box

@@ -1,0 +1,10 @@
+{
+  "domain": "willys_shopping_list",
+  "name": "Willys Shopping List",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://www.willys.se/",
+  "iot_class": "cloud_polling",
+  "single_config_entry": true,
+  "version": "0.1.0"
+}
